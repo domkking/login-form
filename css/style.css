@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap');
+
+/*ANIMARE HOVER BACK DEL LOGIN FORM*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* FORMATTAZIONE CONTENITORE VIDEO */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*FORMATTAZIONE VIDEO*/
+video {
+  width: 100%;
+  height: 100%;
+  filter: opacity(50%);
+  /*filter: blur(5px);*/
+}
+
+/* POSIZIONO IL CONTENITORE SOPRA IL VIDEO */
+.main-container {
+  position: absolute;
+  /* border: 1px solid #fff; */
+  width: 100%;
+  height: 33.5em;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*FORMATTAZIONE CONTAINER CONTENENTE ERRORI PSW*/
+.container-error-psw{
+  font-family: 'Poppins', sans-serif;
+  background: #707070b6;
+  width: 20em ;
+  color: #ff0000;
+}
+
+/* FORMATTAZIONE TITOLO CONTENITORE
+.main-container h1 {
+  font-size: 36px;
+  font-family: 'Montserrat', 'sans-serif';
+  color: #ff9100;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  position: relative;
+} */
+
+/*FORMATTAZIONE LOGO (FOTO)*/
+img{
+  width: 100%;
+  aspect-ratio: 3/1;
+  object-fit: contain;
+  align-self: center;
+}
+
+/*FORMATTAZIONE E AGGIUNTA DEL FORM-LOGIN CONTAINER*/
+.form-container {
+  background: transparent;
+  backdrop-filter: blur(50px);
+  border-radius: 10px;
+  inset: 2px;
+  z-index: 10;
+  margin: 2em;
+  width: 20em;
+  /* height: 30em; */
+  height: 30em;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-left: 10px;
+  transition: .5s ease-in-out;
+}
+
+.form-container:hover {
+  box-shadow: .2em .2em .4em#15e6f5;
+}
+
+/*AGGIUNTA E FORMATTAZIONE INPUTBOX*/
+.input-box {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+
+.input-box input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: .9em;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+/*AGGIUNTA PLACEHOLDER CHE TRASLA VERSO L'ALTO AL CLICK SUL BOX*/
+.input-box span {
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  color: #f59f1570;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+.input-box input:valid~span,
+.input-box input:focus~span {
+  color: #f59f15;
+  transform: translateY(-45px);
+  font-size: 1em;
+}
+
+.input-box h4 {
+  background-color: #d3d3d300;
+  border: 1px solid #f5a015;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 10px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.input-box input:valid~h4,
+.input-box input:focus~h4 {
+  height: 44px;
+  box-shadow: 0 0 .5em#ffba01, .1em .1em .2em#f5a015;
+}
+
+/*AGGIUNTA ICONE AI BOX*/
+.input-box+i {
+  position: relative;
+  width: fit-content;
+  left: 17em;
+  bottom: 1.2em;
+  transition: .2s ease;
+  transform: translateY(-60%);
+  z-index: 11;
+}
+
+.input-box+i.hide::before{
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f09c";
+}
+
+
+/*FORMATTAZIONE LINK FORGOT E SIGNUP*/
+.link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link a {
+  padding-right: 10px;
+  margin-top: 20px;
+  font-size: .9em;
+  font-family: 'Poppin', sans-serif;
+  color: #ffffff3b;
+  text-decoration: none;
+  user-select: text;
+}
+
+.link a:hover {
+  color: #f5a015;
+}
+
+/*AGGIUNTA E FORMATTAZIONE BUTTON LOGIN */
+.btn-login,
+span.copy {
+  margin-right: 10px;
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: .04em;
+}
+
+.btn-login {
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+  left: 2em;
+  font-size: 1.5em;
+  padding: 5px 10px;
+  transition: all 1s;
+}
+
+.btn-login:after,
+.btn-login:before {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border: 0px solid #f59f15;
+  transition: all 1s;
+}
+
+.btn-login:after {
+  top: 0px;
+  left: 0px;
+  border-top: 2px solid #f59f15;
+  border-left: 2px solid #f59f15;
+}
+
+.btn-login:before {
+  bottom: 0px;
+  right: 0px;
+  border-bottom: 2px solid #f59f15;
+  border-right: 2px solid #f59f15;
+}
+
+.btn-login:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.btn-login:hover:before,
+.btn-login:hover:after {
+  width: 99%;
+  height: 95%;
+  color: #fff;
+  box-shadow: inset 0em 0em 4em #f59f1531;
+}
+
+span.copy {
+  margin-top: 26px;
+  font-size: 8.5px;
+  align-self: end;
+  color: #f5a015;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+/* Media query per schermi di larghezza inferiore a 768px */
+@media only screen and (max-width: 767px) {
+  .main-container {
+    left: 0;
+    width: 99.7%;
+  }
+}
+
+/* Media query per schermi di larghezza compresa tra 768px e 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .main-container {
+    left: 6.2%;
+    width: 87.5%;
+  }
+}
+
+/* Media query per schermi di larghezza superiore a 992px */
+@media only screen and (min-width: 992px) {
+  .video-container {
+    height: 100vh;
+  }
+
+  .main-container {
+    left: 6.2%;
+    width: 87.5%;
+  }
+}
